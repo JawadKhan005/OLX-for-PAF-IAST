@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLX PAF-IAST | Login</title>
+    <link rel="stylesheet" href="/olx-pafiast/src/CSS/login.css">
+    <link rel="stylesheet" href="/olx-pafiast/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-bar">
+            <a href="" class="logo"><h1>OLX PAF-IAST</h1></a>
+            <ul class="nav-links">
+                <li><a href="/olx-pafiast/index.html">Shop</a></li>
+                <li><a href="">Newstand</a></li>
+                <li><a href="/olx-pafiast/index.html#about">Who we are</a></li>
+                <li><a href="/olx-pafiast/src/PHP/user_dashboard.php">My profile</a></li>
+                <li><a href="/olx-pafiast/index.html#contact">Contact</a></li>
+                <li><a href="/olx-pafiast/src/PHP/login.html">Login</a></li>
+                <li><a href="/olx-pafiast/src/PHP/signup.html">Signup</a></li>
+            </ul>
+
+            <button class="cart-btn">
+                <i class="fa fa-shopping-basket"></i>
+                <a href="/olx-pafiast/src/HTML/cart.html" style="text-decoration: none; color: black;">Basket</a>
+            </button>
+
+            <div class="menu-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="nav2">
+            <div class="produces">
+                <div class="produce">Sell?</div>
+                <div class="produce">Buy?</div>
+            </div>
+
+            <div class="withProduce">
+                <p class="fresh">Fresh —</p>
+                <p class="date">&nbsp; &nbsp; August 15, 2024</p>
+            </div>
+
+            <div class="btns">
+                <div class="btn btn1">Default</div>
+                <div class="btn btn2">A - Z</div>
+                <div class="btn btn3">List view</div>
+            </div>
+        </div>        
+
+        <hr class="line">
+    </header>
+
+    <div class="login">
+        <h1>Login</h1>
+    
+        <form id="loginForm" action="login.php" method="post" autocomplete="off">
+
+            <!-- <input type="email" style="display: none;">
+            <input type="password" style="display: none;"> -->
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Email" value="" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Password" value="" required>
+
+            <a href="/olx-pafiast/src/PHP/signup.html">Don't have an account? Signup</a>
+            <button type="submit" name="login">Login</button>
+        </form>
+        
+    </div>
+
+    <?php include 'footer.php'; ?>
+
+    <div id="footer"></div>
+
+    <script>
+        fetch('/olx-pafiast/src/HTML/footer.php')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+
+        window.onload = function() {
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+        };
+    </script>
+
+    <Script src="/olx-pafiast/src/JavaScript/nav.js"></Script>
+
+    
+</body>
+</html>

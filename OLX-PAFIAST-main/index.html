@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>OLX PAF-IAST</title>
+    <link rel="stylesheet" href="/olx-pafiast/style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            <a href="" class="logo"><h1>OLX PAF-IAST</h1></a>
+            <ul class="nav-links">
+                <li><a href="/olx-pafiast/index.html">Shop</a></li>
+                <li><a href="">Newstand</a></li>
+                <li><a href="/olx-pafiast/index.html#about">Who we are</a></li>
+                <li><a href="/olx-pafiast/src/PHP/user_dashboard.php">My profile</a></li>
+                <li><a href="/olx-pafiast/index.html#contact">Contact</a></li>
+                <li><a href="/olx-pafiast/src/PHP/login.html">Login</a></li>
+                <li><a href="/olx-pafiast/src/PHP/signup.html">Signup</a></li>
+            </ul>
+
+            <button class="cart-btn" onclick="goToCart()">
+                <i class="fa fa-shopping-basket"></i>
+                <a href="/olx-pafiast/src/HTML/cart.html" style="text-decoration: none; color: black;">Basket</a>
+                <span id="cart-count">0</span>
+            </button>
+
+            <div class="menu-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="nav2">
+            <div class="produces">
+                <div class="produce">
+                    <a href="/olx-pafiast/src/PHP/signup.html">Sell?</a>
+                </div>
+                <div class="produce">
+                    <a href="/olx-pafiast/index.html">Buy?</div>
+            </div>            
+
+            <div class="btns">
+                <div class="btn btn1">Default</div>
+                <div class="btn btn2">A - Z</div>
+                <div class="btn btn3">List view</div>
+            </div>
+        </div>        
+
+        <hr class="line">
+    </header>
+
+    <div class="hero"></div>
+
+    <div id="product-list" class="default-products">
+        <div class="default-products">
+            <div class="box">
+                <div class="product" style="background-image: url('/olx-pafiast/image/mouse.jpg');"></div>
+                <div class="detail">
+                    <p class="name">Mouse</p>
+                    <p class="price">$4.5</p>
+                    <div onclick="addToCart(2)">
+                        <div class="AddToCart-btn">Add to Cart</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="product" style="background-image: url('/olx-pafiast/image/wireless-keyboard.jpg');"></div>
+                <div class="detail">
+                    <p class="name">Keyboard</p>
+                    <p class="price">$24</p>
+                    <div onclick="addToCart(3)">
+                        <div class="AddToCart-btn">Add to Cart</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="product" style="background-image: url('/olx-pafiast/image/earpod.jpg');"></div>
+                <div class="detail">
+                    <p class="name">Earpod</p>
+                    <p class="price">$19</p>
+                    <div onclick="addToCart(4)">
+                        <div class="AddToCart-btn">Add to Cart</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="product" style="background-image: url('/olx-pafiast/image/mouse-ph-pod.jpg');"></div>
+                <div class="detail">
+                    <p class="name">Set</p>
+                    <p class="price">$99</p>
+                    <div onclick="addToCart(1)">
+                        <div class="AddToCart-btn">Add to Cart</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="about" class="about">
+        <p class="aboutText">We’re a community of students, creators, and tech enthusiasts. At OLX PAF-IAST, we’re all about to Connect students to buy, sell, and share gadgets right here at OLF PAF-IAST!</p>
+
+        <button class="cart-btn btnToShop">Browse our Shop</button>
+    </div>
+
+    <p id="contact" class="contactUs">Contact Us</p>
+c
+    <div class="contact">
+        <div class="info">
+            <p class="contactInfo">For more information, please contact us at:</p>
+            <p class="contactEmail">YIiXo@example.com</p>
+            <p class="contactNumber">+123 456 789</p>
+        </div>
+
+        <form class="contactForm" action="/olx-pafiast/src/PHP/contact.php" method="POST">
+            <input class="yourName" name="name" type="text" placeholder="Your name" required>
+
+            <input class="email" name="email" type="email" placeholder="Your email address" required>
+
+            <textarea class="message" name="message" placeholder="Your message" required></textarea>
+
+            <button class="btnToContact" type="submit">Get in touch</button>
+        </form>        
+    </div>
+
+    <div id="popup-notification" class="popup-notification">
+        <p class="notification-message"></p>
+    </div>
+
+    <?php include 'footer.php'; ?>
+
+    <div id="footer"></div>
+
+    <script>
+        fetch('/olx-pafiast/src/HTML/footer.php')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+    </script>
+
+    <script src="/olx-pafiast/src/JavaScript/nav.js"></script>
+    <script src="/olx-pafiast/src/JavaScript/product.js"></script>
+
+</body>
+</html>

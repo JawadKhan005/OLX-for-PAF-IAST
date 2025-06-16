@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLX PAF-IAST | Register yourself</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="/olx-pafiast/src/CSS/signup.css">
+    <link rel="stylesheet" href="/olx-pafiast/style.css">
+</head>
+<body>
+    
+    <header>
+        <div class="nav-bar">
+            <a href="" class="logo"><h1>OLX PAF-IAST</h1></a>
+            <ul class="nav-links">
+                <li><a href="/olx-pafiast/index.html">Shop</a></li>
+                <li><a href="">Newstand</a></li>
+                <li><a href="/olx-pafiast/index.html#about">Who we are</a></li>
+                <li><a href="/olx-pafiast/src/PHP/user_dashboard.php">My profile</a></li>
+                <li><a href="/olx-pafiast/index.html#contact">Contact</a></li>
+                <li><a href="/olx-pafiast/src/PHP/login.html">Login</a></li>
+                <li><a href="/olx-pafiast/src/PHP/signup.html">Signup</a></li>
+            </ul>
+
+            <button class="cart-btn">
+                <i class="fa fa-shopping-basket"></i>
+                <a href="/olx-pafiast/src/HTML/cart.html" style="text-decoration: none; color: black;">Basket</a>
+            </button>
+
+            <div class="menu-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="nav2">
+            <div class="produces">
+                <div class="produce">Sell?</div>
+                <div class="produce">Buy?</div>
+            </div>
+
+            <div class="withProduce">
+                <p class="fresh">Fresh —</p>
+                <p class="date">&nbsp; &nbsp; August 15, 2024</p>
+            </div>
+
+            <div class="btns">
+                <div class="btn btn1">Default</div>
+                <div class="btn btn2">A - Z</div>
+                <div class="btn btn3">List view</div>
+            </div>
+        </div>        
+
+        <hr class="line">
+    </header>
+
+    <div class="signup">
+        <h1>Signup</h1>
+        
+        <form id="signupForm" name="signupForm" action="signup.php" method="post" onsubmit="return validateForm()">
+            <label for="name">Full Name: </label>
+            <input type="text" name="name" value="" placeholder="Name" required>
+
+            <label for="email">Email: </label>
+            <input type="email" name="email" placeholder="Email" required>
+
+            <label for="phone">Phone Number: </label>
+            <input type="text" name="phone" placeholder="Phone Number / wtsp" required>
+
+            <div class="choose">
+                <label for="text" name="gender" style="color: black; font-weight: bold;">Gender: </label>
+                <label for="male">Male</label><input type="radio" name="gender" value="male">
+                <label for="female">Female</label><input type="radio" name="gender" value="female"></label>
+            </div>
+
+            <div class="choose">
+                <label for="text" name="stdFaculty" style="color: black; font-weight: bold;">Student / Faculty: </label>
+                <label for="student">Student</label>
+                <input type="radio" name="stdFaculty" value="student">
+                <label for="faculty">Faculty</label>
+                <input type="radio" name="stdFaculty" value="faculty"></label>
+            </div>
+
+            <label for="password">Password: </label>
+            <input type="password" name="password" placeholder="Password" required>
+
+            <label for="confirmPassword">Confirm Password: </label>
+            <input type="password" name="confirmPassword" placeholder="Password" required>
+
+            <button value="Signup" name="signup">Signup</button>
+        </form>
+        
+        <a class="loginLink" href="/olx-pafiast/src/PHP/login.html">Already have an account? Login</a>
+    </div>
+
+    <?php include 'footer.php'; ?>
+
+    <div id="footer"></div>
+
+    <script>
+        fetch('/olx-pafiast/src/HTML/footer.php')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+
+      function validate() {
+
+         var name = document.signupForm.name.value;
+         var nameregx = /^[A-Za-z ]{1,20}$/;
+
+         var email = document.signupForm.email.value;
+         var emailregx = /^[A-Za-z]{1}[A-Za-z_0-9.]{1,}@[A-Za-z]{2,12}[.]{1}[A-Za-z.]{2,8}$/;
+
+         var password = document.signupForm.password.value;
+         var passwordregx = /^(?=.*[0-9])(?=.*[\*&%\$!@_])[A-Za-z0-9\*&%$!@_]{8,}$/;
+
+         
+         if (!nameregx.test(name)) {
+             alert("Incorrect name");
+             return false;
+         }
+
+         if (!emailregx.test(email)) {
+             alert("Incorrect Email");
+             return false;
+         }
+
+         if (!passwordregx.test(password)) {
+             alert("Incorrect Password");
+             return false;
+         }
+         
+         return true;
+      }
+    </script>
+
+    <script src="/olx-pafiast/src/JavaScript/nav.js"></script>
+
+    
+</body>
+</html>

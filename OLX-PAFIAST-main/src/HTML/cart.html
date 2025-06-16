@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="/olx-pafiast/src/CSS/cart.css">
+    <link rel="stylesheet" href="/olx-pafiast/style.css">
+    <title>OLX PAF-IAST | Your Cart</title>
+</head>
+<body>
+
+    <header>
+        <div class="nav-bar">
+            <a href="" class="logo"><h1>OLX PAF-IAST</h1></a>
+            <ul class="nav-links">
+                <li><a href="/olx-pafiast/index.html">Shop</a></li>
+                <li><a href="">Newstand</a></li>
+                <li><a href="/olx-pafiast/index.html#about">Who we are</a></li>
+                <li><a href="/olx-pafiast/src/PHP/user_dashboard.php">My profile</a></li>
+                <li><a href="/olx-pafiast/index.html#contact">Contact</a></li>
+                <li><a href="/olx-pafiast/src/PHP/login.html">Login</a></li>
+                <li><a href="/olx-pafiast/src/PHP/signup.html">Signup</a></li>
+            </ul>
+
+            <button class="cart-btn">
+                <i class="fa fa-shopping-basket"></i>
+                <a href="/olx-pafiast/src/HTML/cart.html" style="text-decoration: none; color: black;">Basket</a>
+            </button>
+
+            <div class="menu-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="nav2">
+            <div class="produces">
+                <div class="produce">Sell?</div>
+                <div class="produce">Buy?</div>
+            </div>
+
+            <div class="withProduce">
+                <p class="fresh">Fresh —</p>
+                <p class="date">&nbsp; &nbsp; August 15, 2024</p>
+            </div>
+
+            <div class="btns">
+                <div class="btn btn1">Default</div>
+                <div class="btn btn2">A - Z</div>
+                <div class="btn btn3">List view</div>
+            </div>
+        </div>        
+
+        <hr class="line">
+    </header>
+
+    
+    
+    <div id="cart-container" class="display-cart">
+        <h2>Basket</h2>
+        <div id="cart-items"></div>
+        <div class="order-summary">
+            <h3>Order Summary</h3>
+            <div class="invoice">
+                <div class="name">
+                    <p>Subtotal</p>
+                    <p>Shipping</p>
+                    <p>Total</p>
+                </div>
+                <div class="price">
+                    <p id="subtotal">$0</p>
+                    <p>$0</p>
+                    <p id="total">$0</p>
+                </div>
+            </div>
+            <div class="checkout">
+                <p>Checkout</p>
+            </div>
+        </div>
+    </div>
+    
+    <br>
+
+    <h2 style="text-align: center;">Cart Sample below:</h2>
+
+    <div class="display-cart">
+        <div class="basket">
+            Basket
+        </div>
+
+        <div class="count-item">
+            3 items
+        </div>
+
+        <hr class="separator">
+
+        <div class="products">
+            <div class="product">
+                <div class="remove">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <div class="details">
+                    <p class="name">Earpod</p>
+                    <p class="price" style="color: green;">$19</p>
+                </div>
+                <div class="quantity">
+                    <i class="fa-solid fa-minus"></i>
+                    <input type="number" name="qty" id="" value="1">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="remove">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <div class="details">
+                    <p class="name">Earpod</p>
+                    <p class="price" style="color: green;">$19</p>
+                </div>
+                <div class="quantity">
+                    <i class="fa-solid fa-minus"></i>
+                    <input type="number" name="qty" id="" value="1">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="remove">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <div class="details">
+                    <p class="name">Earpod</p>
+                    <p class="price" style="color: green;">$19</p>
+                </div>
+                <div class="quantity">
+                    <i class="fa-solid fa-minus"></i>
+                    <input type="number" name="qty" id="" value="1">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="order-summary">
+            <h3>Order Summary</h3>
+            <div class="invoice">
+                <div class="name">
+                    <p>Subtotal</p>
+                    <p>Shipping</p>
+                    <p>Total</p>
+                </div>
+                <div class="price">
+                    <p>$19</p>
+                    <p>$0</p>
+                    <p>$19</p>
+                </div>
+            </div>
+            <div class="checkout">
+                <p>Checkout</p>
+            </div>
+        </div>
+    </div>
+
+    <?php include 'footer.php'; ?>
+
+    <div id="footer"></div>
+
+    <script>
+        fetch('/olx-pafiast/src/HTML/footer.php')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+    </script>
+
+    <script src="/olx-pafiast/src/JavaScript/nav.js"></script>
+    <script src="/olx-pafiast/src/JavaScript/product.js"></script>
+    
+</body>
+</html>

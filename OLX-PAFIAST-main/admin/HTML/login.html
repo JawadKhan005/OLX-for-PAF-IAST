@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | OLX PAF-IAST</title>
+    <link rel="stylesheet" href="/olx-pafiast/src/CSS/login.css">
+</head>
+<body>
+
+    <div class="login">
+        <h1>Login</h1>
+    
+        <form id="loginForm" action="/olx-pafiast/admin/PHP/login.php" method="post" autocomplete="off">
+            <label for="email">Enter Your CNIC:</label>
+            <input type="number" name="cnic" id="cnic" placeholder="CNIC (without dashes)" value="" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Password" value="" required>
+
+            <a href="/olx-pafiast/admin/HTML/signup.html">Don't have an account? Signup</a>
+            <button type="submit" name="login">Login</button>
+        </form>
+    </div>
+
+    <script>
+        window.onload = function() {
+            document.getElementById("cnic").value = "";
+            document.getElementById("password").value = "";
+        };
+    </script>
+    
+</body>
+</html>
